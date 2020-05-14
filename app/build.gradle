@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.ex.mvp"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //RxJava+RxAndroid+Retrofit
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'io.reactivex:rxjava:1.3.3'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    implementation 'com.squareup.retrofit2:retrofit-converters:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    //沉浸式状态栏
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation 'com.blankj:utilcodex:1.28.4'
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
+}
